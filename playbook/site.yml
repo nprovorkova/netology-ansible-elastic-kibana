@@ -111,7 +111,7 @@
     - name: Set environment Kibana
       become: true
       template:
-        src: templates/elk.sh.j2
-        dest: /etc/profile.d/elk.sh
+        src: templates/kibana.sh.j2
+        dest: /etc/profile.d/kibana.sh
         mode: 0755
       tags: kibana
