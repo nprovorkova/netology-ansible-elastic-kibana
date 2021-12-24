@@ -1,0 +1,16 @@
+node("linux"){
+    stage("Git checkout"){
+        git credentialsId: '89dcc1dd-b23a-44f9-ad8b-f607c92ba84f', url: 'git@github.com:nprovorkova/netology-ansible-elastic-kibana.git'
+    }
+    stage("Sample define prod_run"){
+        prod_run=false
+    }
+    stage("Run playbook"){
+        if (prod_run){
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        else{
+            sh 'ansible-playbook site.yml -i inventory/prod.yml' --check --diff
+        }
+    }
+}
