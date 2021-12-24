@@ -11,7 +11,7 @@ node {
             sh 'ansible-playbook site.yml -i inventory/prod.yml'
         }
         else {
-            sudo sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+            sh 'sudo ansible-playbook site.yml -i inventory/prod.yml --check --diff'
         }
     }
 }
