@@ -6,7 +6,7 @@ node {
         prod_run=false
     }
     stage("Run playbook") {
-        cd playbook
+        sh 'cd playbook'
         if (prod_run) {
             sh 'ansible-playbook site.yml -i inventory/prod.yml'
         }
