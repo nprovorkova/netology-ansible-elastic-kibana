@@ -1,4 +1,4 @@
-node("linux"){
+node {
     stage("Git checkout") {
         git credentialsId: '89dcc1dd-b23a-44f9-ad8b-f607c92ba84f', url: 'git@github.com:nprovorkova/netology-ansible-elastic-kibana.git'
     }
